@@ -1,9 +1,7 @@
-# example/urls.py
 from django.urls import path
-
-from example.views import index
-
+from example import views
 
 urlpatterns = [
-    path('', index),
+    path('', views.index),
+    path('create-table/class/<str:c>/section/<str:s>/year/<str:d>/', views.create_table_view, name='create-table'),
 ]
